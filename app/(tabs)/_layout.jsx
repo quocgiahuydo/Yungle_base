@@ -5,21 +5,20 @@ import { Image } from 'react-native'
 import { icons } from '../../constants'
 const TabIcon =({icon,name,color,focused})=>{
   return(
-    <View className ="items-center justify-center gap-2 mt-[1.8vh] w-[60px]">
+    <View className ="items-center justify-center gap-2 mt-[1.8vh] w-[64px]">
       <Image
         source={icon}
         resizeMode='contain'
         tintColor={color}
         className='w-5 h-5'
       />
-      <Text className ={`${focused ? 'text-purple-500': 'text-current'} text-xs `}>
+      <Text className ={`${focused ? 'text-purple-500': 'text-current'} text-[11px] `}>
         {name}
         </Text>
     </View>
 
   )
 }
-
 const TabsLayout = () => {
   return (
 <>
@@ -27,8 +26,8 @@ const TabsLayout = () => {
 screenOptions={
   {
     tabBarShowLabel:false,
-    abBarActiveTintColor: '#FFA001',
-                    tabBarInactiveTintColor:'#CDCDE0',
+    tabBarActiveTintColor: '#d052f2',
+                    tabBarInactiveTintColor:'#b8b8d4',
                     tabBarStyle:{
                         backgroundColor: '#dddddd',
                         borderTopWidth: 1,

@@ -1,3 +1,3 @@
 import logo from "../assets/images/yungle_logo.png"
-
-export default {logo};
+import profile_pic from "../assets/images/profile_pic.png"
+export default {logo, profile_pic};
