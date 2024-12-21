@@ -11,6 +11,11 @@ import hiking from "../assets/icons/hiking.png"
 import real_estate from "../assets/icons/real_estate.png"
 import fashion from "../assets/icons/fashion.png"
 import battery from "../assets/icons/battery.png"
+import correct from "../assets/icons/correct.png"
+import job from "../assets/icons/job.png"
+import workplace from "../assets/icons/workplace.png"
+import premium from "../assets/icons/premium.png"
+
 
 import filter from "../assets/icons/filter.png"
 export default {
@@ -28,4 +33,8 @@ export default {
     fashion,
     battery,
     filter,
+    correct,
+    job,
+    workplace,
+    premium
 };

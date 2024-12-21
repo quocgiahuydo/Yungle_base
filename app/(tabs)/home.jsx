@@ -36,71 +36,104 @@ const ForYou =()=>{
   const DATA = [
     { id: '1', title: 'Harry Do', 
       profile_pic:images.harry_do, 
-      uni:'University of Binghamton',
+      uni:'University of Binghamton, NY',
+      uni_logo:images.bu_logo,
       job:'Course Assistant',
-      joblocation:''
     },
      
     { id: '4', title: 'Brandon Tang',
       profile_pic:images.brandon_tang,
-      uni:'University of Binghamton',
+      uni:'University of Binghamton, NY',
+      uni_logo:images.bu_logo,
       job:'Chemist'
     
     },
     
     {id:'2', title:'Phu Toan',
       profile_pic:images.toan,
-      uni:'University of South Florida',
+      uni:'University of South Florida, Florida',
+      uni_logo:images.usf_logo,
       job:'Cyber Security'
+      
       
     },
     {id:'3', title:'Hiten Malhotra', 
       profile_pic:images.hiten,
-    
-      uni:'University of Binghamton',
+      uni_logo:images.bu_logo,
+      uni:'University of Binghamton, NY',
       job:'AI Engineer'},
     {id:'5', title:'Leo Fukakou', 
-      uni:'HCMC University of Technology (HCMUT)',
+      uni:'HCMC University of Technology (HCMUT), Viet Nam',
+      profile_pic:images.leo,
+      uni_logo:images.bku_logo,
       job:'Data Analytic'},
     // ... add more items as needed
   ];
   
-  const Item = ({ title ,profile_pic,uni,job}
+  const Item = ({ title ,profile_pic,uni,job, uni_logo}
   ) => (
-    <View className="p-2 bg-white rounded-md w-[90vw] h-[18vh] mb-[3vh] ml-[20px] shadow-md" >
+    <View className="p-2 bg-white rounded-md w-[90vw] h-[19.5vh] mb-[3vh] ml-[20px] shadow-md" >
      <View className = "relative">
       <View className="rounded-full w-[7vh] h-[7vh] absolute mt-[5px] ml-[4px] items-center">
         <Image
           source={getImage(profile_pic)}
-          className="w-[6.5vh] h-[6.5vh] rounded-full mt-[1.3px]"
+          className="w-[6.2vh] h-[6.2vh] rounded-full mt-[1.3px] mb-0"
         />
       </View>
-      <Text className="text-black px-[20vw] pt-[10px] font-bold  ">{title}</Text>
-      <Text className="text-black px-[20vw] pt-[3px] font-thin w-[190vw] ">{getUniversity(uni)}</Text>
-      </View>
-      <View className=" mr-[10vw] border-y-1  w-[88.6vw] h-[1px] mt-7 border-t-slate-300 bg-slate-300">
-      </View>
-      <View className ='relative w-[200vw] mt-[5px]'>
-        <Text className="px-[15px] text-[11px] absolute">{getJob(job)}</Text>
-        <Text className='px-[35vw] text-[11px] absolute' >ABC Tech Solution</Text>
-      </View>
-      <View className="relative mt-6">
-        <View  className="w-[80px] h-[40px] absolute">
-        <Button
-        className='font-thin text-xs'
-        title="Accept"
-        onPress={()=>{console.log("Accepted")}}
+      <View className='flex-row items-center'>
+      <Text className="text-black pl-[20vw] pt-[10px] font-bold ">{title}</Text>
+      <Image
+        source={icons.correct}
+        className='w-4 h-4 ml-1 mt-3 '
       />
+      <View className=' mt-[1vh] ml-[15vw] w-[17vw] flex-row bg-yellow-200 rounded-md items-center'>
+        <Image
+          source={icons.premium}
+          className='w-4 h-4'
+        />
+        <Text className=' text-orange-300 text-[12px]'>Premium</Text>
       </View>
-      <View className="w-[80px] h-[40px] absolute ml-[20vw]">
-       <Button 
-        className='font-thin'
-        title="Decline"
-        onPress={()=>{console.log("Decline")}}
-      />
       </View>
+      <View className='flex-row items-center '>
+        <Image
+        source={uni_logo}
+        className='w-5 h-5 ml-[9.5vh] rounded-full '
+        />
+      <Text className="  text-black text-[12px] pl-[11px] pt-[2px] pb-0 mb-0 font-thin w-[63vw]">{getUniversity(uni)}</Text>
       </View>
-    </View>
+      </View>{/* Hereeeeee*/}
+      <View className=" mr-[10vw] border-y-1  w-[88.6vw] h-[1px] mt-5 border-t-slate-300 bg-slate-300">
+      </View>
+      <View className ='flex-row w-[200vw] mt-[4px]'>
+        <View className=' flex-row'>
+          <Image
+            source={icons.job}
+            className='w-4 h-4 ml-3'
+          />
+        <Text className="pl-[6px] text-[11px] ">{getJob(job)}</Text>
+        </View>
+        <View className='flex-row ml-3'>
+          <Image
+            source={icons.workplace}
+            className='w-4 h-4 ml-3'
+          />
+        <Text className='pl-[8px] text-[11px] ' >ABC Tech Solution</Text>
+        </View>
+      </View>
+      <Text className='font-thin  text-[10px] ml-3 p-0'>10 mutual connections</Text>
+      <View className='flex-row items-center mb-0 '>
+        <TouchableOpacity
+        className='bg-gray-200 w-[35vw] mt-2 h-[4vh] mx-[18px] px-5  rounded-lg items-center shadow-inner'
+        >
+          <Text className='items-center mt-[1vh] text-black '>Decline</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+        className='bg-purple-600 w-[35vw] mt-2 h-[4vh] mx-[5px] px-5 rounded-lg items-center shadow-inner'
+        >
+          <Text className='items-center mt-[1vh] text-white'>Accept</Text>
+        </TouchableOpacity>
+      </View>
+       </View>
   );
   const [isHorizontal, setIsHorizontal] = useState(false);
   return(
@@ -111,6 +144,7 @@ const ForYou =()=>{
     profile_pic={item.profile_pic} 
     uni ={item.uni}
     job={item.job}
+    uni_logo={item.uni_logo}
     />} // Access individual item properties
     keyExtractor={(item) => item.id} 
     horizontal={isHorizontal}

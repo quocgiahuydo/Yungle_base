@@ -4,4 +4,8 @@ import harry_do from "../assets/images/harry_do.jpg"
 import brandon_tang from "../assets/images/brandon_tang.jpg"
 import hiten from "../assets/images/hiten.jpg"
 import toan from "../assets/images/phu_toan.jpeg"
-export default {logo, profile_pic,harry_do,brandon_tang,hiten,toan};
+import bu_logo from "../assets/images/bu_logo.jpg"
+import usf_logo from "../assets/images/usf_logo.png"
+import bku_logo from "../assets/images/bku_logo.png"
+import leo from "../assets/images/leo.jpeg"
+export default {logo, profile_pic,harry_do,brandon_tang,hiten,toan, leo,bu_logo, usf_logo, bku_logo};
