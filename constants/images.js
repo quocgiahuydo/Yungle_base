@@ -8,4 +8,5 @@ import bu_logo from "../assets/images/bu_logo.jpg"
 import usf_logo from "../assets/images/usf_logo.png"
 import bku_logo from "../assets/images/bku_logo.png"
 import leo from "../assets/images/leo.jpeg"
-export default {logo, profile_pic,harry_do,brandon_tang,hiten,toan, leo,bu_logo, usf_logo, bku_logo};
+import background from "../assets/images/background.jpeg"
+export default {logo, profile_pic,harry_do,brandon_tang,hiten,toan, leo,bu_logo, usf_logo, bku_logo, background};

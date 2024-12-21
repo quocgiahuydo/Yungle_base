@@ -15,9 +15,13 @@ import correct from "../assets/icons/correct.png"
 import job from "../assets/icons/job.png"
 import workplace from "../assets/icons/workplace.png"
 import premium from "../assets/icons/premium.png"
-
+import dot from "../assets/icons/dots.png"
+import school from "../assets/icons/graduate-hat.png"
+import interest from "../assets/icons/heart.png"
 
 import filter from "../assets/icons/filter.png"
+
+import photo from "../assets/icons/photo.png"
 export default {
     chat,
     menu,
@@ -36,5 +40,9 @@ export default {
     correct,
     job,
     workplace,
-    premium
+    premium,
+    dot,
+    school ,
+    interest,
+    photo
 };

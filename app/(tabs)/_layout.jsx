@@ -110,6 +110,7 @@ screenOptions={
       )
     }}
   ></Tabs.Screen>
+
 </Tabs>
 
 

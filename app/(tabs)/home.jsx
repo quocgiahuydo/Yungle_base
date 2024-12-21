@@ -8,6 +8,7 @@ import { icons } from '../../constants'
 import { Image } from 'react-native'
 import {images} from '../../constants'
 import { Button } from 'react-native'
+import { StatusBar } from 'react-native'
 const Tab = createMaterialTopTabNavigator();
 
 const TabIcon =({icon,name,color,focused})=>{
@@ -48,6 +49,11 @@ const ForYou =()=>{
       job:'Chemist'
     
     },
+    {id:'5', title:'Leo Fukakou', 
+      uni:'HCMC University of Technology (HCMUT), Viet Nam',
+      profile_pic:images.leo,
+      uni_logo:images.bku_logo,
+      job:'Data Analytic'},
     
     {id:'2', title:'Phu Toan',
       profile_pic:images.toan,
@@ -62,11 +68,7 @@ const ForYou =()=>{
       uni_logo:images.bu_logo,
       uni:'University of Binghamton, NY',
       job:'AI Engineer'},
-    {id:'5', title:'Leo Fukakou', 
-      uni:'HCMC University of Technology (HCMUT), Viet Nam',
-      profile_pic:images.leo,
-      uni_logo:images.bku_logo,
-      job:'Data Analytic'},
+    
     // ... add more items as needed
   ];
   
@@ -102,7 +104,7 @@ const ForYou =()=>{
       <Text className="  text-black text-[12px] pl-[11px] pt-[2px] pb-0 mb-0 font-thin w-[63vw]">{getUniversity(uni)}</Text>
       </View>
       </View>{/* Hereeeeee*/}
-      <View className=" mr-[10vw] border-y-1  w-[88.6vw] h-[1px] mt-5 border-t-slate-300 bg-slate-300">
+      <View className=" mr-[10vw]  border-y-1  w-[88.6vw] h-[1px] mt-[23px] border-t-slate-300 bg-slate-300">
       </View>
       <View className ='flex-row w-[200vw] mt-[4px]'>
         <View className=' flex-row'>
@@ -123,6 +125,7 @@ const ForYou =()=>{
       <Text className='font-thin  text-[10px] ml-3 p-0'>10 mutual connections</Text>
       <View className='flex-row items-center mb-0 '>
         <TouchableOpacity
+        onPress={()=>{console.log("Hello Everyone")}}
         className='bg-gray-200 w-[35vw] mt-2 h-[4vh] mx-[18px] px-5  rounded-lg items-center shadow-inner'
         >
           <Text className='items-center mt-[1vh] text-black '>Decline</Text>
@@ -137,6 +140,7 @@ const ForYou =()=>{
   );
   const [isHorizontal, setIsHorizontal] = useState(false);
   return(
+    <>
     <FlatList
     data={DATA} // Array of objects to be rendered
     renderItem={({item}) => <Item 
@@ -183,6 +187,12 @@ const ForYou =()=>{
     </View>  
   )}
     />
+    <StatusBar
+    backgroundColor='#161622' style ='dark'
+    />
+    </>
+   
+
   )
 }
 const DEI =()=>{
