@@ -7,11 +7,14 @@ import { images } from '../../constants'
 import { Image } from 'react-native'
 import {icons} from '../../constants'
 import {ListView} from 'react-native'
+import { FlatList } from 'react-native'
 const profile = () => {
-  return (
-    <SafeAreaProvider>
-    <ScrollView>
-      <View className='h-[20vh] w-[100vw] rounded-sm  z-10'>
+  const DATA=[{
+    id:1,title:'Harry Do'
+  }]
+  const Item =()=>(
+    <View>
+      <View className='h-[20vh] w-[100vw] rounded-sm z-10'>
         <Image
         source={images.background}
         className='w-[100vw] h-[20vh] absolute '
@@ -32,8 +35,8 @@ const profile = () => {
           className='h-[130px] w-[130px] mt-1 rounded-full z-40'
         />
       </View>
-      <View className ='flex-row w-[120px] justify-center align-middle '>
-      <Text className='text-[20px] text-black pt-[4.8px]  font-semibold'>Harry Do</Text>
+      <View className ='flex-row w-[120px] justify-center align-middle z-20'>
+      <Text className='text-[20px] text-black pt-[4.8px]  font-semibold z-30'>Harry Do</Text>
       <Image
         className='w-4 h-4 mt-3 ml-1 '
         source={icons.correct}
@@ -153,9 +156,16 @@ const profile = () => {
       </View>
       <StatusBar 
       backgroundColor='#161622' style ='light'/>
-</ScrollView>
+      </View>
+  )
+  return (
+      <FlatList
+        data={DATA}
+        keyExtractor={(item)=>item.id}
+        renderItem={({item})=><Item/>}
+        className='h-full mb-3'
+      />
 
-</SafeAreaProvider>
   )
 }
 
